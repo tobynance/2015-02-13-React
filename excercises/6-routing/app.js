@@ -4,10 +4,11 @@
 // Add a route to "about" and link to it above the "New Contact"
 // link on the left sidebar.
 ////////////////////////////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Router from 'react-router';
+import ContactStore from './ContactStore';
 
-var React = require('react');
-var Router = require('react-router');
-var ContactStore = require('./ContactStore');
 var {
   Route,
   DefaultRoute,
@@ -169,6 +170,6 @@ var routes = (
 );
 
 Router.run(routes, function (Handler) {
-  React.render(<Handler/>, document.body);
+  ReactDOM.render(<Handler/>, document.getElementById("react-app"));
 });
 

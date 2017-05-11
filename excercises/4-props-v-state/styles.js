@@ -1,5 +1,4 @@
-var assign = require('react/lib/Object.assign');
-var styles = {};
+let styles = {};
 
 styles.tab = {
   display: 'inline-block',
@@ -10,7 +9,7 @@ styles.tab = {
   cursor: 'pointer'
 };
 
-styles.activeTab = assign({}, styles.tab, {
+styles.activeTab = Object.assign({}, styles.tab, {
   borderBottomColor: '#000'
 });
 
@@ -18,5 +17,4 @@ styles.tabPanels = {
   padding: 10
 };
 
-module.exports = styles;
-
+export default styles;

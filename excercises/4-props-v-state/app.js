@@ -10,9 +10,10 @@
 // but they can go back if they'd like. If the tabs keep their own state you
 // can't control them with your application logic.
 ////////////////////////////////////////////////////////////////////////////////
-var React = require('react');
-var styles = require('./styles');
-var data = require('./data');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import styles from './styles';
+import data from './data';
 
 var Tabs = React.createClass({
 
@@ -77,5 +78,5 @@ var App = React.createClass({
   }
 });
 
-React.render(<App tabs={data}/>, document.body);
+ReactDOM.render(<App tabs={data}/>, document.getElementById("react-app"));
 

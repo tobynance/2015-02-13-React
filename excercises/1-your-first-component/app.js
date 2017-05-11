@@ -8,10 +8,12 @@
 //   (might want to use `sort-by` https://github.com/staygrimm/sort-by#example)
 ////////////////////////////////////////////////////////////////////////////////
 
-var React = require('react');
-var sortBy = require('sort-by');
 
-var DATA = {
+import React from 'react';
+import ReactDOM from 'react-dom';
+import sortBy from 'sort-by';
+
+const DATA = {
   title: 'Menu',
   items: [
     { id: 1, name: 'tacos', type: 'mexican' },
@@ -21,13 +23,13 @@ var DATA = {
   ]
 };
 
-var Menu = React.createClass({
+class Menu extends React.Component {
   render () {
-    return null;
+    return (
+        <div>Some other text</div>
+    );
   }
-});
+}
 
-React.render(<Menu/>, document.body, () => {
-  require('./tests').run();
-});
+ReactDOM.render(<Menu/>, document.getElementById("react-app"));
 

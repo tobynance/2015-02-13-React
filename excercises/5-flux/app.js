@@ -6,7 +6,8 @@
 //
 // hint: use `xhr.deleteJSON(url)` where the url is `/contacts/:id`
 ////////////////////////////////////////////////////////////////////////////////
-var React = require('react');
-var App = require('./app/components/App');
-React.render(<App/>, document.body);
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(<App/>, document.getElementById("react-app"));
 
