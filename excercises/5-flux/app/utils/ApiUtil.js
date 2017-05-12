@@ -1,8 +1,8 @@
-var xhr = require('../lib/xhr');
-var { API, ActionTypes } = require('../Constants');
-var ServerActionCreators = require('../actions/ServerActionCreators');
+import xhr from '../lib/xhr';
+import { API, ActionTypes } from '../Constants';
+import ServerActionCreators from '../actions/ServerActionCreators';
 
-var ApiUtils = {
+const ApiUtils = {
   loadContacts () {
     xhr.getJSON(`${API}/contacts`, (err, res) => {
       ServerActionCreators.loadedContacts(res.contacts);
@@ -10,5 +10,5 @@ var ApiUtils = {
   }
 };
 
-module.exports = ApiUtils;
+export default ApiUtils;
 

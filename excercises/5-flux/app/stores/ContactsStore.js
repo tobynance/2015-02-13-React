@@ -1,22 +1,21 @@
-var AppDispatcher = require('../AppDispatcher');
-var { EventEmitter } = require('events');
-var { ActionTypes } = require('../Constants');
-var assign = require('react/lib/Object.assign');
+import AppDispatcher from '../AppDispatcher';
+import { EventEmitter } from 'events';
+import { ActionTypes } from '../Constants';
 
-var events = new EventEmitter();
-var CHANGE_EVENT = 'CHANGE';
+let events = new EventEmitter();
+const CHANGE_EVENT = 'CHANGE';
 
-var state = {
+let state = {
   contacts: [],
   loaded: false
 };
 
-var setState = (newState) => {
-  assign(state, newState);
+let setState = (newState) => {
+  Object.assign(state, newState);
   events.emit(CHANGE_EVENT);
 };
 
-var ContactsStore = {
+let ContactsStore = {
   addChangeListener (fn) {
     events.addListener(CHANGE_EVENT, fn);
   },
@@ -41,5 +40,5 @@ ContactsStore.dispatchToken = AppDispatcher.register((payload) => {
   }
 });
 
-module.exports = ContactsStore;
+export default ContactsStore;
 

@@ -1,8 +1,8 @@
-var { ActionTypes } = require('../Constants');
-var AppDispatcher = require('../AppDispatcher');
-var ApiUtil = require('../utils/ApiUtil');
+import { ActionTypes } from '../Constants';
+import AppDispatcher from '../AppDispatcher';
+import ApiUtil from '../utils/ApiUtil';
 
-var ViewActionCreators = {
+const ViewActionCreators = {
   loadContacts () {
     AppDispatcher.handleViewAction({
       type: ActionTypes.LOAD_CONTACTS
@@ -10,6 +10,5 @@ var ViewActionCreators = {
     ApiUtil.loadContacts();
   }
 };
-
-module.exports = ViewActionCreators;
+export default ViewActionCreators;
 

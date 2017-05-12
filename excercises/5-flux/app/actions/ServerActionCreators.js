@@ -1,7 +1,7 @@
-var { ActionTypes } = require('../Constants');
-var AppDispatcher = require('../AppDispatcher');
+import { ActionTypes } from '../Constants';
+import AppDispatcher from '../AppDispatcher';
 
-var ServerActionCreators = {
+const ServerActionCreators = {
   loadedContacts (contacts) {
     AppDispatcher.handleServerAction({
       type: ActionTypes.CONTACTS_LOADED,
@@ -10,5 +10,4 @@ var ServerActionCreators = {
   }
 };
 
-module.exports = ServerActionCreators;
-
+export default ServerActionCreators;
